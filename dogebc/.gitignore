@@ -1,0 +1,3 @@
+*.bin
+*.elf
+generated.stm32f030f4p6.ld
