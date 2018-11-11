@@ -1,0 +1,17 @@
+sudo: false
+
+os:
+  - linux
+
+language:
+  - c
+
+services:
+  - docker
+
+before_install:
+  - docker pull debian:testing
+
+script:
+  - docker build -t withgit .
+  - docker run --user="build" withgit /bin/sh -c "cd /home/build && make"
